@@ -1,10 +1,7 @@
 import pandas as pd
 import requests
 
-# CSV 파일 경로 지정
 file_path = 'kost_daily_report.csv'
-
-# CSV 파일 읽기
 df = pd.read_csv(file_path)
 
 # 'Project' 열을 제외한 나머지 열(날짜별 열)을 선택
@@ -23,7 +20,7 @@ top_100_projects = df_filtered.sort_values(by='Project total', ascending=False).
 top_100_project_names = top_100_projects['Project'].tolist()
 
 # API 요청
-url = "https://katalog.kr.krmt.io/api/v1/projects"
+url = "https://"
 response = requests.get(url)
 data = response.json()
 
